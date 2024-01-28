@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Rispek Abangku</string>
+    <string name="teks_cari_apa_abangku">Cari apa abangkuh 🤙🤙</string>
+    <string name="teks_tidak_ada_data_untuk_sekarang_abangkuh">Tidak ada data tersedia untuk sekarang king, coba lagi nanti ya tetap ilmu padi  🌾🌾</string>
+    <string name="teks_tidak_ada_data_tersedia">Tidak ada data nih king 👑🙇‍️</string>
+    <string name="text_information">Tap aja abangku nanti akan tersalin ke clipboard. mantap mas zaki semua atas APInya https://salin-abangku.vercel.app</string>
+    <string name="teks_kasih_paham_wak">Kasih paham wak</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <LinearLayout
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            style="@style/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--search-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_shape_editext"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_7sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_search_24" />
+
+                    <EditText
+                        android:id="@+id/edtSearch"
+                        style="@style/editText"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/teks_cari_apa_abangku"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--data view-->
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/swipe">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--no data view-->
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/view_no_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_centerInParent="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                style="@style/adaptiveImageLogo"/>
+
+                            <TextView
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                style="@style/medium12"
+                                android:text="@string/teks_tidak_ada_data_tersedia"/>
+                            <TextView
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"
+                                android:textColor="@color/dark_secondary"
+                                style="@style/body10"
+                                android:text="@string/teks_tidak_ada_data_untuk_sekarang_abangkuh"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_data" />
+                </LinearLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
